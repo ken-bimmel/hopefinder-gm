@@ -7,3 +7,4 @@ The goal of this project is to provide some GM tools for [Hopefinder](https://ww
 1. Clone the repo and navigate into it
 2. `npm install`
 3. `npm run start`
+4. If using VSCode, installt he Prettier extension and set it as the default formatter
