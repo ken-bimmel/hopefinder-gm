@@ -5,6 +5,7 @@ import {
   NativeSelect,
   Grid,
   TextField,
+  Typography,
 } from "@mui/material";
 import { LOOT_AREAS, LOOT_TABLE } from "./data/lootTables";
 
@@ -28,7 +29,7 @@ function App() {
     <Grid
       container
       direction="column"
-      justifyContent="center"
+      justifyContent="space-between"
       alignItems="center"
     >
       <Grid item style={{ width: "100%" }}>
@@ -69,6 +70,27 @@ function App() {
           </Grid>
           <Grid item>
             <Button onClick={rollTable}>Roll</Button>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid container direction="column">
+          <Grid item>
+            <Typography variant="overline">
+              All game content © 2022 Minotaur Games
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="overline">
+              Content distributed under{" "}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://opengamingfoundation.org/ogl.html"
+              >
+                OGL v1.0a
+              </a>
+            </Typography>
           </Grid>
         </Grid>
       </Grid>
