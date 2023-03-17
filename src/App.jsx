@@ -101,6 +101,18 @@ function App() {
               </a>
             </Typography>
           </Grid>
+          <Grid item>
+            <Typography variant="overline">
+              Software distributed under the{" "}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://mit-license.org/"
+              >
+                MIT License
+              </a>
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
