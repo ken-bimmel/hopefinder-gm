@@ -7,11 +7,14 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { LOOT_AREAS, LOOT_TABLE } from "./data/lootTables";
+import { LOOT_AREAS } from "./data/lootTables";
+import rollTable from "./services/rollTable";
+import ArmorTable from "./components/ArmorTable";
 
 function App() {
   const [selectedTable, setSelectedTable] = useState(LOOT_AREAS[0]);
   const [targetBarter, setTargetBarter] = useState(1);
+  const [rolledItems, setRolledItems] = useState([]);
 
   const updateSelectedTable = function (event) {
     setSelectedTable(event.target.value);
@@ -20,9 +23,9 @@ function App() {
     setTargetBarter(event.target.value);
   };
 
-  const rollTable = function () {
-    const table = LOOT_TABLE[selectedTable];
-    console.log(table, targetBarter);
+  const rollWithValues = function () {
+    const results = rollTable(selectedTable, targetBarter);
+    setRolledItems(results);
   };
 
   return (
@@ -31,6 +34,8 @@ function App() {
       direction="column"
       justifyContent="space-between"
       alignItems="center"
+      spacing={4}
+      style={{ padding: "32px" }}
     >
       <Grid item style={{ width: "100%" }}>
         <Grid
@@ -65,13 +70,17 @@ function App() {
               id="target-barter-select"
               label="Target Barter"
               type="number"
+              defaultValue={1}
               onChange={updateTargetBarter}
             />
           </Grid>
           <Grid item>
-            <Button onClick={rollTable}>Roll</Button>
+            <Button onClick={rollWithValues}>Roll</Button>
           </Grid>
         </Grid>
+      </Grid>
+      <Grid item>
+        <ArmorTable armorItems={rolledItems} />
       </Grid>
       <Grid item>
         <Grid container direction="column">

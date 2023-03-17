@@ -1388,7 +1388,7 @@ const BACKPACK = {
   break: "4",
 };
 const HARDHAT = {
-  category: "armor",
+  category: "gear",
   name: "Bike Helmet/Hardhat ",
   type: "synthetic",
   barter: "3",
@@ -1412,7 +1412,7 @@ const HOLSTER = {
   break: "2",
 };
 const MILITARY_HELMET = {
-  category: "armor",
+  category: "gear",
   name: "Military Helmet ",
   type: "synthetic",
   barter: "5",
@@ -1649,11 +1649,15 @@ const LOOT_TABLE = {
   [HARDWARE_STORE]: [
     {
       item: TOOL_BELT,
-      weighting: 1,
+      weighting: 3,
     },
     {
       item: WRENCH,
       weighting: 1,
+    },
+    {
+      item: IMPROVISED_SHIELD,
+      weighting: 2,
     },
   ],
   [BIG_BOX]: [],
