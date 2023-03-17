@@ -45,9 +45,17 @@ const APARTMENT = "Apartment";
 const DOCK = "Dock";
 const TRAIN_STATION = "Train Station";
 
+// Item Categories
+const ARMOR = "Armor";
+const WEAPON = "Weapon";
+const FOOD = "Food";
+const AMMO = "Ammo";
+const MEDICINE = "Medicine";
+const GEAR = "Gear";
+
 // Items
 const BIKER_GEAR = {
-  category: "armor",
+  category: ARMOR,
   name: "Biker Gear",
   type: "Leather",
   barter: "3",
@@ -59,7 +67,7 @@ const BIKER_GEAR = {
   break: "10",
 };
 const BULLET_PROOF_VEST = {
-  category: "armor",
+  category: ARMOR,
   name: "Bullet Proof Vest",
   type: "Synthetic",
   barter: "6",
@@ -71,7 +79,7 @@ const BULLET_PROOF_VEST = {
   break: "10",
 };
 const CLOTHES_BASIC = {
-  category: "armor",
+  category: ARMOR,
   name: "Clothes, Basic",
   type: "Cloth",
   barter: "0",
@@ -83,7 +91,7 @@ const CLOTHES_BASIC = {
   break: "6",
 };
 const CLOTHES_FANCY = {
-  category: "armor",
+  category: ARMOR,
   name: "Clothes, Fancy",
   type: "Cloth",
   barter: "4",
@@ -95,7 +103,7 @@ const CLOTHES_FANCY = {
   break: "6",
 };
 const CLOTHES_WINTER = {
-  category: "armor",
+  category: ARMOR,
   name: "Clothes, Winter",
   type: "Cloth",
   barter: "0",
@@ -107,7 +115,7 @@ const CLOTHES_WINTER = {
   break: "8",
 };
 const FIREFIGHTER_GEAR = {
-  category: "armor",
+  category: ARMOR,
   name: "Firefighter Gear",
   type: "Synthetic",
   barter: "4",
@@ -119,7 +127,7 @@ const FIREFIGHTER_GEAR = {
   break: "10",
 };
 const LAB_GEAR = {
-  category: "armor",
+  category: ARMOR,
   name: "Lab Gear",
   type: "Synthetic",
   barter: "2",
@@ -131,7 +139,7 @@ const LAB_GEAR = {
   break: "6",
 };
 const LEATHER_ARMOR = {
-  category: "armor",
+  category: ARMOR,
   name: "Leather Armor",
   type: "Leather",
   barter: "5",
@@ -143,7 +151,7 @@ const LEATHER_ARMOR = {
   break: "12",
 };
 const LIGHT_PATCHWORK = {
-  category: "armor",
+  category: ARMOR,
   name: "Light Patchwork",
   type: "Patchwork",
   barter: "4",
@@ -155,7 +163,7 @@ const LIGHT_PATCHWORK = {
   break: "10",
 };
 const WORKWEAR = {
-  category: "armor",
+  category: ARMOR,
   name: "Workwear",
   type: "Leather",
   barter: "1",
@@ -167,7 +175,7 @@ const WORKWEAR = {
   break: "10",
 };
 const HAZMAT_SUIT = {
-  category: "armor",
+  category: ARMOR,
   name: "Hazmat Suit",
   type: "Synthetic",
   barter: "7",
@@ -179,7 +187,7 @@ const HAZMAT_SUIT = {
   break: "8",
 };
 const HEAVY_PATCHWORK = {
-  category: "armor",
+  category: ARMOR,
   name: "Heavy Patchwork",
   type: "Patchwork",
   barter: "6",
@@ -191,7 +199,7 @@ const HEAVY_PATCHWORK = {
   break: "12",
 };
 const INFANTRY_ARMOR = {
-  category: "armor",
+  category: ARMOR,
   name: "Infantry Armor",
   type: "Synthetic",
   barter: "14",
@@ -203,7 +211,7 @@ const INFANTRY_ARMOR = {
   break: "18",
 };
 const IRON_ARMOR = {
-  category: "armor",
+  category: ARMOR,
   name: "Iron Armor",
   type: "Patchwork",
   barter: "8",
@@ -215,7 +223,7 @@ const IRON_ARMOR = {
   break: "14",
 };
 const POLICE_BODY_ARMOR = {
-  category: "armor",
+  category: ARMOR,
   name: "Police Body Armor",
   type: "Synthetic",
   barter: "10",
@@ -227,7 +235,7 @@ const POLICE_BODY_ARMOR = {
   break: "16",
 };
 const SPORTS_PROTECTION = {
-  category: "armor",
+  category: ARMOR,
   name: "Sports Protection",
   type: "Synthetic",
   barter: "7",
@@ -239,7 +247,7 @@ const SPORTS_PROTECTION = {
   break: "12",
 };
 const ZDAY_ARMOR = {
-  category: "armor",
+  category: ARMOR,
   name: "Z-Day Armor",
   type: "Synthetic",
   barter: "20",
@@ -251,7 +259,7 @@ const ZDAY_ARMOR = {
   break: "20",
 };
 const IMPROVISED_SHIELD = {
-  category: "armor",
+  category: ARMOR,
   name: "Improvised Shield",
   type: "Patchwork",
   barter: "0",
@@ -263,7 +271,7 @@ const IMPROVISED_SHIELD = {
   break: "4",
 };
 const RIOT_SHIELD = {
-  category: "armor",
+  category: ARMOR,
   name: "Riot Shield",
   type: "Synthetic",
   barter: "4",
@@ -275,7 +283,7 @@ const RIOT_SHIELD = {
   break: "8",
 };
 const BASEBALL_BAT = {
-  category: "weapon",
+  category: WEAPON,
   name: "Baseball Bat",
   type: "club",
   barter: "2",
@@ -288,7 +296,7 @@ const BASEBALL_BAT = {
   break: "4",
 };
 const BRANCH = {
-  category: "weapon",
+  category: WEAPON,
   name: "Branch",
   type: "-",
   barter: "0",
@@ -301,7 +309,7 @@ const BRANCH = {
   break: "2",
 };
 const BRASS_KNUCKLES = {
-  category: "weapon",
+  category: WEAPON,
   name: "Brass Knuckles",
   type: "tool",
   barter: "1",
@@ -314,7 +322,7 @@ const BRASS_KNUCKLES = {
   break: "4",
 };
 const BRICK = {
-  category: "weapon",
+  category: WEAPON,
   name: "Brick",
   type: "-",
   barter: "0",
@@ -327,7 +335,7 @@ const BRICK = {
   break: "1",
 };
 const CRAFTED_SPEAR = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crafted Spear",
   type: "blade",
   barter: "2",
@@ -340,7 +348,7 @@ const CRAFTED_SPEAR = {
   break: "4",
 };
 const CRUDE_SPEAR = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crude Spear",
   type: "patchwork",
   barter: "1",
@@ -352,21 +360,22 @@ const CRUDE_SPEAR = {
   bulk: "1",
   break: "1",
 };
-const FIST = {
-  category: "weapon",
-  name: "Fist",
-  type: "-",
-  barter: "-",
-  damage: "Nonlethal",
-  traits: "Finesse",
-  hands: "1",
-  range: "-",
-  reload: "-",
-  bulk: "-",
-  break: "-",
-};
+// Hopefully aren't looting these
+// const FIST = {
+//   category: WEAPON,
+//   name: "Fist",
+//   type: "-",
+//   barter: "-",
+//   damage: "Nonlethal",
+//   traits: "Finesse",
+//   hands: "1",
+//   range: "-",
+//   reload: "-",
+//   bulk: "-",
+//   break: "-",
+// };
 const GARDEN_SHEARS = {
-  category: "weapon",
+  category: WEAPON,
   name: "Garden Shears",
   type: "blade",
   barter: "1",
@@ -379,7 +388,7 @@ const GARDEN_SHEARS = {
   break: "2",
 };
 const GOLF_CLUB = {
-  category: "weapon",
+  category: WEAPON,
   name: "Golf Club",
   type: "club",
   barter: "1",
@@ -392,7 +401,7 @@ const GOLF_CLUB = {
   break: "4",
 };
 const HAND_AXE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Hand Axe",
   type: "axe",
   barter: "2",
@@ -405,7 +414,7 @@ const HAND_AXE = {
   break: "4",
 };
 const KITCHEN_KNIFE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Kitchen Knife",
   type: "blade",
   barter: "1",
@@ -418,7 +427,7 @@ const KITCHEN_KNIFE = {
   break: "2",
 };
 const POCKET_KNIFE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Pocket Knife",
   type: "blade",
   barter: "1",
@@ -431,7 +440,7 @@ const POCKET_KNIFE = {
   break: "1",
 };
 const SCREWDRIVER = {
-  category: "weapon",
+  category: WEAPON,
   name: "Screwdriver",
   type: "tool",
   barter: "1",
@@ -444,7 +453,7 @@ const SCREWDRIVER = {
   break: "2",
 };
 const SHIV = {
-  category: "weapon",
+  category: WEAPON,
   name: "Shiv",
   type: "patchwork",
   barter: "0",
@@ -457,7 +466,7 @@ const SHIV = {
   break: "C",
 };
 const TOOL_HEAVY = {
-  category: "weapon",
+  category: WEAPON,
   name: "Tool, Heavy",
   type: "tool",
   barter: "1",
@@ -470,7 +479,7 @@ const TOOL_HEAVY = {
   break: "4",
 };
 const CHAINSAW = {
-  category: "weapon",
+  category: WEAPON,
   name: "Chainsaw",
   type: "tool",
   barter: "8",
@@ -483,7 +492,7 @@ const CHAINSAW = {
   break: "4",
 };
 const COMBAT_KNIFE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Combat Knife",
   type: "blade",
   barter: "2",
@@ -496,7 +505,7 @@ const COMBAT_KNIFE = {
   break: "4",
 };
 const CRUDE_SWORD = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crude Sword",
   type: "patchwork",
   barter: "1",
@@ -509,7 +518,7 @@ const CRUDE_SWORD = {
   break: "1",
 };
 const FIRE_AXE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Fire Axe",
   type: "axe",
   barter: "3",
@@ -522,7 +531,7 @@ const FIRE_AXE = {
   break: "4",
 };
 const KATANA = {
-  category: "weapon",
+  category: WEAPON,
   name: "Katana",
   type: "blade",
   barter: "5",
@@ -535,7 +544,7 @@ const KATANA = {
   break: "6",
 };
 const MACHETE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Machete",
   type: "blade",
   barter: "3",
@@ -548,7 +557,7 @@ const MACHETE = {
   break: "4",
 };
 const SLEDGEHAMMER = {
-  category: "weapon",
+  category: WEAPON,
   name: "Sledgehammer",
   type: "club",
   barter: "5",
@@ -561,7 +570,7 @@ const SLEDGEHAMMER = {
   break: "6",
 };
 const BOTTLE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Bottle",
   type: "-",
   barter: "0",
@@ -574,7 +583,7 @@ const BOTTLE = {
   break: "C",
 };
 const CRAFTED_BOW = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crafted Bow",
   type: "bow",
   barter: "3",
@@ -587,7 +596,7 @@ const CRAFTED_BOW = {
   break: "4",
 };
 const CRUDE_BOW = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crude Bow",
   type: "bow",
   barter: "2",
@@ -600,7 +609,7 @@ const CRUDE_BOW = {
   break: "2",
 };
 const CRUDE_PISTOL = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crude Pistol",
   type: "pistol",
   barter: "2",
@@ -613,7 +622,7 @@ const CRUDE_PISTOL = {
   break: "2",
 };
 const CRUDE_RIFLE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crude Rifle",
   type: "rifle",
   barter: "3",
@@ -626,7 +635,7 @@ const CRUDE_RIFLE = {
   break: "2",
 };
 const DBL_BARREL_SHOTGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Dbl. Barrel Shotgun",
   type: "shotgun",
   barter: "4",
@@ -639,7 +648,7 @@ const DBL_BARREL_SHOTGUN = {
   break: "4",
 };
 const HUNTING_RIFLE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Hunting Rifle",
   type: "rifle",
   barter: "4",
@@ -652,7 +661,7 @@ const HUNTING_RIFLE = {
   break: "4",
 };
 const MOLOTOV_COCKTAIL = {
-  category: "weapon",
+  category: WEAPON,
   name: "Molotov Cocktail",
   type: " Fuel",
   barter: " 2",
@@ -665,7 +674,7 @@ const MOLOTOV_COCKTAIL = {
   break: "C",
 };
 const POCKET_PISTOL = {
-  category: "weapon",
+  category: WEAPON,
   name: "Pocket Pistol",
   type: "pistol",
   barter: "3",
@@ -678,7 +687,7 @@ const POCKET_PISTOL = {
   break: "4",
 };
 const REVOLVER = {
-  category: "weapon",
+  category: WEAPON,
   name: "Revolver",
   type: "pistol",
   barter: "4",
@@ -691,7 +700,7 @@ const REVOLVER = {
   break: "4",
 };
 const FRAG_GRENADE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Frag Grenade",
   type: "grenade",
   barter: "4",
@@ -704,7 +713,7 @@ const FRAG_GRENADE = {
   break: "C",
 };
 const INCENDIARY_GRENADE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Incendiary Grenade",
   type: "grenade",
   barter: "6",
@@ -717,7 +726,7 @@ const INCENDIARY_GRENADE = {
   break: "C",
 };
 const TEAR_GAS_GRENADE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Tear Gas Grenade",
   type: "grenade",
   barter: "3",
@@ -730,7 +739,7 @@ const TEAR_GAS_GRENADE = {
   break: "C",
 };
 const COMPOUND_BOW = {
-  category: "weapon",
+  category: WEAPON,
   name: "Compound Bow",
   type: "bow",
   barter: "4",
@@ -743,7 +752,7 @@ const COMPOUND_BOW = {
   break: "6",
 };
 const CROSSBOW = {
-  category: "weapon",
+  category: WEAPON,
   name: "Crossbow",
   type: "bow",
   barter: "4",
@@ -756,7 +765,7 @@ const CROSSBOW = {
   break: "4",
 };
 const HAND_CANNON = {
-  category: "weapon",
+  category: WEAPON,
   name: "Hand Cannon",
   type: "pistol",
   barter: "8",
@@ -769,7 +778,7 @@ const HAND_CANNON = {
   break: "4",
 };
 const HEAVY_MACHINEGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Heavy Machinegun",
   type: "rifle",
   barter: "12",
@@ -782,7 +791,7 @@ const HEAVY_MACHINEGUN = {
   break: "6",
 };
 const LIGHT_MACHINEGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Light Machinegun",
   type: "rifle",
   barter: "8",
@@ -795,7 +804,7 @@ const LIGHT_MACHINEGUN = {
   break: "4",
 };
 const MILITARY_MACHINEGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Military Machinegun",
   type: "rifle",
   barter: "18",
@@ -808,7 +817,7 @@ const MILITARY_MACHINEGUN = {
   break: "6",
 };
 const PUMP_SHOTGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Pump Shotgun",
   type: "shotgun",
   barter: "5",
@@ -821,7 +830,7 @@ const PUMP_SHOTGUN = {
   break: "4",
 };
 const SEMIAUTO_PISTOL = {
-  category: "weapon",
+  category: WEAPON,
   name: "Semiauto Pistol",
   type: "pistol",
   barter: "6",
@@ -834,7 +843,7 @@ const SEMIAUTO_PISTOL = {
   break: "4",
 };
 const SEMIAUTO_SHOTGUN = {
-  category: "weapon",
+  category: WEAPON,
   name: "Semiauto Shotgun",
   type: "shotgun",
   barter: "8",
@@ -847,7 +856,7 @@ const SEMIAUTO_SHOTGUN = {
   break: "6",
 };
 const SNIPER_RIFLE = {
-  category: "weapon",
+  category: WEAPON,
   name: "Sniper Rifle",
   type: "rifle",
   barter: "10",
@@ -860,7 +869,7 @@ const SNIPER_RIFLE = {
   break: "4",
 };
 const ARROWS_10 = {
-  category: "ammo",
+  category: AMMO,
   name: "Arrows/Bolts (10)",
   type: "tool",
   barter: "1",
@@ -868,7 +877,7 @@ const ARROWS_10 = {
   break: "1",
 };
 const BULLETS_PISTOL_10 = {
-  category: "ammo",
+  category: AMMO,
   name: "Bullets, Pistol (10) ",
   type: "bullet",
   barter: "1",
@@ -876,7 +885,7 @@ const BULLETS_PISTOL_10 = {
   break: "1",
 };
 const BULLETS_RIFLE_10 = {
-  category: "ammo",
+  category: AMMO,
   name: "Bullets, Rifle or Shotgun (10) ",
   type: "bullet",
   barter: "2",
@@ -884,7 +893,7 @@ const BULLETS_RIFLE_10 = {
   break: "1",
 };
 const PIERCING_BULLETS_PISTOL_5 = {
-  category: "ammo",
+  category: AMMO,
   name: "Piercing Bullets, Pistol (5) ",
   type: "bullet",
   barter: "2",
@@ -892,7 +901,7 @@ const PIERCING_BULLETS_PISTOL_5 = {
   break: "2",
 };
 const PIERCING_BULLETS_RIFLE_OR_SHOTGUN_5 = {
-  category: "ammo",
+  category: AMMO,
   name: "Piercing Bullets, Rifle or Shotgun (5) ",
   type: "bullet",
   barter: "3",
@@ -900,7 +909,7 @@ const PIERCING_BULLETS_RIFLE_OR_SHOTGUN_5 = {
   break: "2",
 };
 const ZROUND_BULLETS_PISTOL_1 = {
-  category: "ammo",
+  category: AMMO,
   name: "Z-Round Bullets, Pistol (1) ",
   type: "bullet",
   barter: " 4",
@@ -908,7 +917,7 @@ const ZROUND_BULLETS_PISTOL_1 = {
   break: "4",
 };
 const ZROUND_BULLETS_RIFLE_1 = {
-  category: "ammo",
+  category: AMMO,
   name: "Z-Round Bullets, Rifle (1) ",
   type: "bullet",
   barter: "5",
@@ -916,7 +925,7 @@ const ZROUND_BULLETS_RIFLE_1 = {
   break: "4",
 };
 const BEER = {
-  category: "food",
+  category: FOOD,
   name: "Beer",
   type: "-",
   barter: "3",
@@ -924,7 +933,7 @@ const BEER = {
   break: "1",
 };
 const CANNED_GOODS = {
-  category: "food",
+  category: FOOD,
   name: "Canned Goods",
   type: "-",
   barter: "2",
@@ -932,7 +941,7 @@ const CANNED_GOODS = {
   break: "1",
 };
 const CANNED_GOODS_EXPIRED = {
-  category: "food",
+  category: FOOD,
   name: "Canned Goods, Expired",
   type: "-",
   barter: "1",
@@ -940,7 +949,7 @@ const CANNED_GOODS_EXPIRED = {
   break: "1",
 };
 const LIQUOR = {
-  category: "food",
+  category: FOOD,
   name: "Liquor",
   type: "-",
   barter: "4",
@@ -948,7 +957,7 @@ const LIQUOR = {
   break: "1",
 };
 const MEAT_FRESH = {
-  category: "food",
+  category: FOOD,
   name: "Meat, Fresh",
   type: "-",
   barter: "2",
@@ -956,7 +965,7 @@ const MEAT_FRESH = {
   break: "1",
 };
 const RATION_BAR = {
-  category: "food",
+  category: FOOD,
   name: "Ration, Bar",
   type: "-",
   barter: "1",
@@ -964,7 +973,7 @@ const RATION_BAR = {
   break: "1",
 };
 const RATION_DAY = {
-  category: "food",
+  category: FOOD,
   name: "Ration, Day",
   type: "-",
   barter: "3",
@@ -972,7 +981,7 @@ const RATION_DAY = {
   break: "1",
 };
 const SOFT_DRINK = {
-  category: "food",
+  category: FOOD,
   name: "Soft Drink",
   type: "-",
   barter: "2",
@@ -980,7 +989,7 @@ const SOFT_DRINK = {
   break: "1",
 };
 const VEGETABLES_FRESH = {
-  category: "food",
+  category: FOOD,
   name: "Vegetables, Fresh",
   type: "-",
   barter: "1",
@@ -988,7 +997,7 @@ const VEGETABLES_FRESH = {
   break: "1",
 };
 const WATER = {
-  category: "food",
+  category: FOOD,
   name: "Water (1 Gal)",
   type: "-",
   barter: "1",
@@ -996,7 +1005,7 @@ const WATER = {
   break: "1",
 };
 const ASPIRIN = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Aspirin (bottle) ",
   type: "medicine",
   barter: "2",
@@ -1004,7 +1013,7 @@ const ASPIRIN = {
   break: "2",
 };
 const BANDAGES = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Bandages ",
   type: "cloth",
   barter: "1",
@@ -1012,7 +1021,7 @@ const BANDAGES = {
   break: "1",
 };
 const COLD_PACK = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Cold Pack ",
   type: "medicine",
   barter: "2",
@@ -1020,7 +1029,7 @@ const COLD_PACK = {
   break: "1",
 };
 const FIRST_AID_KIT = {
-  category: "medicine",
+  category: MEDICINE,
   name: "First Aid Kit ",
   type: "medicine",
   barter: "3",
@@ -1028,7 +1037,7 @@ const FIRST_AID_KIT = {
   break: "2",
 };
 const SEDATIVE = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Sedative ",
   type: "medicine",
   barter: "5",
@@ -1036,7 +1045,7 @@ const SEDATIVE = {
   break: "C",
 };
 const SPLINT = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Splint",
   type: "tool",
   barter: "1",
@@ -1044,7 +1053,7 @@ const SPLINT = {
   break: "2",
 };
 const SURGICAL_KIT = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Surgical Kit",
   type: "tool",
   barter: "8",
@@ -1052,7 +1061,7 @@ const SURGICAL_KIT = {
   break: "4",
 };
 const VITAMINS = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Vitamins (bottle) ",
   type: "medicine",
   barter: "3",
@@ -1060,7 +1069,7 @@ const VITAMINS = {
   break: "1",
 };
 const WATER_PURIFICATION_TABLETS = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Water Purification Tablets ",
   type: "medicine",
   barter: "2",
@@ -1068,7 +1077,7 @@ const WATER_PURIFICATION_TABLETS = {
   break: "1",
 };
 const ZNOC = {
-  category: "medicine",
+  category: MEDICINE,
   name: "Z-Noc (1 dose) ",
   type: "medicine",
   barter: "6",
@@ -1076,7 +1085,7 @@ const ZNOC = {
   break: "C",
 };
 const AUTOMOTIVE_KIT = {
-  category: "gear",
+  category: GEAR,
   name: "Automotive Kit",
   type: "tool",
   barter: "4",
@@ -1084,7 +1093,7 @@ const AUTOMOTIVE_KIT = {
   break: "4",
 };
 const BEDROLL = {
-  category: "gear",
+  category: GEAR,
   name: "Bedroll ",
   type: "cloth",
   barter: "2",
@@ -1092,7 +1101,7 @@ const BEDROLL = {
   break: "2",
 };
 const BATTERY_SMALL = {
-  category: "gear",
+  category: GEAR,
   name: "Battery (small) ",
   type: "power",
   barter: "1",
@@ -1100,7 +1109,7 @@ const BATTERY_SMALL = {
   break: "1",
 };
 const BATTERY_LARGE = {
-  category: "gear",
+  category: GEAR,
   name: "Battery (large) ",
   type: "power",
   barter: "4",
@@ -1108,7 +1117,7 @@ const BATTERY_LARGE = {
   break: "2",
 };
 const CANTEEN = {
-  category: "gear",
+  category: GEAR,
   name: "Canteen",
   type: "tool",
   barter: "1",
@@ -1116,7 +1125,7 @@ const CANTEEN = {
   break: "2",
 };
 const CLIMBING_KIT = {
-  category: "gear",
+  category: GEAR,
   name: "Climbing Kit",
   type: "tool",
   barter: "2",
@@ -1124,7 +1133,7 @@ const CLIMBING_KIT = {
   break: "4",
 };
 const COMPASS = {
-  category: "gear",
+  category: GEAR,
   name: "Compass",
   type: "tool",
   barter: "1",
@@ -1132,7 +1141,7 @@ const COMPASS = {
   break: "1",
 };
 const CROWBAR = {
-  category: "gear",
+  category: GEAR,
   name: "Crowbar",
   type: "tool",
   barter: "1",
@@ -1140,7 +1149,7 @@ const CROWBAR = {
   break: "4",
 };
 const DUCT_TAPE = {
-  category: "gear",
+  category: GEAR,
   name: "Duct Tape",
   type: "tool",
   barter: "2",
@@ -1148,7 +1157,7 @@ const DUCT_TAPE = {
   break: "1",
 };
 const FLASHLIGHT = {
-  category: "gear",
+  category: GEAR,
   name: "Flashlight",
   type: "tool",
   barter: "1",
@@ -1156,7 +1165,7 @@ const FLASHLIGHT = {
   break: "1",
 };
 const GASOLINE = {
-  category: "gear",
+  category: GEAR,
   name: "Gasoline (1 Gallon)",
   type: " Fuel",
   barter: "1",
@@ -1164,7 +1173,7 @@ const GASOLINE = {
   break: "1",
 };
 const GENERATOR = {
-  category: "gear",
+  category: GEAR,
   name: "Generator ",
   type: "electronic",
   barter: "14",
@@ -1172,7 +1181,7 @@ const GENERATOR = {
   break: "8",
 };
 const HAMMER = {
-  category: "gear",
+  category: GEAR,
   name: "Hammer*",
   type: "tool",
   barter: "1",
@@ -1180,7 +1189,7 @@ const HAMMER = {
   break: "4",
 };
 const HEADLIGHT = {
-  category: "gear",
+  category: GEAR,
   name: "Headlight",
   type: "tool",
   barter: "2",
@@ -1188,7 +1197,7 @@ const HEADLIGHT = {
   break: "1",
 };
 const LAPTOP = {
-  category: "gear",
+  category: GEAR,
   name: "Laptop ",
   type: "electronic",
   barter: "10",
@@ -1196,7 +1205,7 @@ const LAPTOP = {
   break: "4",
 };
 const LIGHTER = {
-  category: "gear",
+  category: GEAR,
   name: "Lighter",
   type: "tool",
   barter: "1",
@@ -1204,7 +1213,7 @@ const LIGHTER = {
   break: "1",
 };
 const LOCKPICKS = {
-  category: "gear",
+  category: GEAR,
   name: "Lockpicks",
   type: "tool",
   barter: "3",
@@ -1212,7 +1221,7 @@ const LOCKPICKS = {
   break: "2",
 };
 const MACHINERY_KIT = {
-  category: "gear",
+  category: GEAR,
   name: "Machinery Kit",
   type: "tool",
   barter: "3",
@@ -1220,7 +1229,7 @@ const MACHINERY_KIT = {
   break: "4",
 };
 const MAKEUP_KIT = {
-  category: "gear",
+  category: GEAR,
   name: "Makeup Kit",
   type: "tool",
   barter: "3",
@@ -1228,7 +1237,7 @@ const MAKEUP_KIT = {
   break: "1",
 };
 const MAP_LOCAL = {
-  category: "gear",
+  category: GEAR,
   name: "Map, Local",
   type: "tool",
   barter: "2",
@@ -1236,7 +1245,7 @@ const MAP_LOCAL = {
   break: "1",
 };
 const MULTITOOL = {
-  category: "gear",
+  category: GEAR,
   name: "Multitool",
   type: "tool",
   barter: "4",
@@ -1244,7 +1253,7 @@ const MULTITOOL = {
   break: "2",
 };
 const MUSICAL_INSTRUMENT = {
-  category: "gear",
+  category: GEAR,
   name: "Musical Instrument",
   type: "tool",
   barter: "2",
@@ -1252,7 +1261,7 @@ const MUSICAL_INSTRUMENT = {
   break: "2",
 };
 const POWER_SHUNT = {
-  category: "gear",
+  category: GEAR,
   name: "Power Shunt ",
   type: "electronic",
   barter: "4",
@@ -1260,7 +1269,7 @@ const POWER_SHUNT = {
   break: "1",
 };
 const REFERENCE_BOOKS = {
-  category: "gear",
+  category: GEAR,
   name: "Reference Books",
   type: "tool",
   barter: "3",
@@ -1268,7 +1277,7 @@ const REFERENCE_BOOKS = {
   break: "1",
 };
 const RADIO_BATTERY = {
-  category: "gear",
+  category: GEAR,
   name: "Radio, Battery ",
   type: "electronic",
   barter: "3",
@@ -1276,7 +1285,7 @@ const RADIO_BATTERY = {
   break: "1",
 };
 const RADIO_CRANK = {
-  category: "gear",
+  category: GEAR,
   name: "Radio, Crank ",
   type: "electronic",
   barter: "5",
@@ -1284,7 +1293,7 @@ const RADIO_CRANK = {
   break: "2",
 };
 const ROPE = {
-  category: "gear",
+  category: GEAR,
   name: "Rope (20 ft)",
   type: "tool",
   barter: "1",
@@ -1292,7 +1301,7 @@ const ROPE = {
   break: "2",
 };
 const SHOVEL = {
-  category: "gear",
+  category: GEAR,
   name: "Shovel",
   type: "tool",
   barter: "1",
@@ -1300,7 +1309,7 @@ const SHOVEL = {
   break: "2",
 };
 const SIPHON_KIT = {
-  category: "gear",
+  category: GEAR,
   name: "Siphon Kit",
   type: "tool",
   barter: "3",
@@ -1308,7 +1317,7 @@ const SIPHON_KIT = {
   break: "2",
 };
 const SKILLET = {
-  category: "gear",
+  category: GEAR,
   name: "Skillet*",
   type: "tool",
   barter: "1",
@@ -1316,7 +1325,7 @@ const SKILLET = {
   break: "4",
 };
 const TARP = {
-  category: "gear",
+  category: GEAR,
   name: "Tarp ",
   type: "cloth",
   barter: "1",
@@ -1324,7 +1333,7 @@ const TARP = {
   break: "2",
 };
 const TENT = {
-  category: "gear",
+  category: GEAR,
   name: "Tent (2 Person) ",
   type: "cloth",
   barter: "3",
@@ -1332,7 +1341,7 @@ const TENT = {
   break: "2",
 };
 const TRANSLATION_DICTIONARY = {
-  category: "gear",
+  category: GEAR,
   name: "Translation Dictionary",
   type: "tool",
   barter: "2",
@@ -1340,7 +1349,7 @@ const TRANSLATION_DICTIONARY = {
   break: "1",
 };
 const TRAP_EXPLOSIVE = {
-  category: "gear",
+  category: GEAR,
   name: "Trap, Explosive",
   type: "tool",
   barter: "2",
@@ -1348,7 +1357,7 @@ const TRAP_EXPLOSIVE = {
   break: "2",
 };
 const TRAP_NOISE = {
-  category: "gear",
+  category: GEAR,
   name: "Trap, Noise",
   type: "tool",
   barter: "1",
@@ -1356,7 +1365,7 @@ const TRAP_NOISE = {
   break: "1",
 };
 const TRAP_TRIP_WIRE = {
-  category: "gear",
+  category: GEAR,
   name: "Trap, Trip Wire",
   type: "tool",
   barter: "2",
@@ -1364,7 +1373,7 @@ const TRAP_TRIP_WIRE = {
   break: "1",
 };
 const WALKIE_TALKIE = {
-  category: "gear",
+  category: GEAR,
   name: "Walkie Talkie (each) ",
   type: "electronic",
   barter: "4",
@@ -1372,7 +1381,7 @@ const WALKIE_TALKIE = {
   break: "2",
 };
 const WRENCH = {
-  category: "gear",
+  category: GEAR,
   name: "Wrench",
   type: "tool",
   barter: "1",
@@ -1380,7 +1389,7 @@ const WRENCH = {
   break: "4",
 };
 const BACKPACK = {
-  category: "gear",
+  category: GEAR,
   name: "Backpack ",
   type: "cloth",
   barter: "1",
@@ -1388,7 +1397,7 @@ const BACKPACK = {
   break: "4",
 };
 const HARDHAT = {
-  category: "gear",
+  category: GEAR,
   name: "Bike Helmet/Hardhat ",
   type: "synthetic",
   barter: "3",
@@ -1396,7 +1405,7 @@ const HARDHAT = {
   break: "4",
 };
 const HIKING_BOOTS = {
-  category: "gear",
+  category: GEAR,
   name: "Hiking Boots ",
   type: "leather",
   barter: "3",
@@ -1404,7 +1413,7 @@ const HIKING_BOOTS = {
   break: "4",
 };
 const HOLSTER = {
-  category: "gear",
+  category: GEAR,
   name: "Holster (pistol) ",
   type: "leather",
   barter: "2",
@@ -1412,7 +1421,7 @@ const HOLSTER = {
   break: "2",
 };
 const MILITARY_HELMET = {
-  category: "gear",
+  category: GEAR,
   name: "Military Helmet ",
   type: "synthetic",
   barter: "5",
@@ -1420,7 +1429,7 @@ const MILITARY_HELMET = {
   break: "8",
 };
 const TOOL_BELT = {
-  category: "gear",
+  category: GEAR,
   name: "Tool Belt ",
   type: "leather",
   barter: "1",
@@ -1428,7 +1437,7 @@ const TOOL_BELT = {
   break: "2",
 };
 const RAINCOAT = {
-  category: "gear",
+  category: GEAR,
   name: "Raincoat ",
   type: "cloth",
   barter: "1",
@@ -1436,7 +1445,7 @@ const RAINCOAT = {
   break: "2",
 };
 const URBAN_CAMOUFLAGE = {
-  category: "gear",
+  category: GEAR,
   name: "Urban Camouflage ",
   type: "patchwork",
   barter: "1",
@@ -1444,7 +1453,7 @@ const URBAN_CAMOUFLAGE = {
   break: "2",
 };
 const WATCH = {
-  category: "gear",
+  category: GEAR,
   name: "Watch ",
   type: "electronic",
   barter: "2",
@@ -1527,7 +1536,6 @@ const ALL_ITEMS = [
   BRICK,
   CRAFTED_SPEAR,
   CRUDE_SPEAR,
-  FIST,
   GARDEN_SHEARS,
   GOLF_CLUB,
   HAND_AXE,
@@ -1706,4 +1714,6 @@ const LOOT_TABLE = {
   [TRAIN_STATION]: [],
 };
 
-export { LOOT_AREAS, ALL_ITEMS, LOOT_TABLE };
+const GEAR_CATEGORIES = [AMMO, FOOD, MEDICINE, GEAR];
+
+export { LOOT_AREAS, ALL_ITEMS, LOOT_TABLE, GEAR_CATEGORIES, ARMOR, WEAPON };

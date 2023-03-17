@@ -10,6 +10,13 @@ import {
 import { LOOT_AREAS } from "./data/lootTables";
 import rollTable from "./services/rollTable";
 import ArmorTable from "./components/ArmorTable";
+import WeaponTable from "./components/WeaponTable";
+import GearTable from "./components/GearTable";
+import {
+  filterToArmorItems,
+  filterToGearItems,
+  filterToWeaponItems,
+} from "./services/filterDrops";
 
 function App() {
   const [selectedTable, setSelectedTable] = useState(LOOT_AREAS[0]);
@@ -80,7 +87,23 @@ function App() {
         </Grid>
       </Grid>
       <Grid item>
-        <ArmorTable armorItems={rolledItems} />
+        <Grid
+          container
+          direction="column"
+          justifyContent="flex-start"
+          alignItems="center"
+          spacing={4}
+        >
+          <Grid item>
+            <ArmorTable armorItems={filterToArmorItems(rolledItems)} />
+          </Grid>
+          <Grid item>
+            <WeaponTable weaponItems={filterToWeaponItems(rolledItems)} />
+          </Grid>
+          <Grid item>
+            <GearTable gearItems={filterToGearItems(rolledItems)} />
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item>
         <Grid container direction="column">
