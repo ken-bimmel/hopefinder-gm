@@ -1,4 +1,4 @@
-// Item area keys
+// #region Item area keys
 const HARDWARE_STORE = "Hardware Store";
 const BIG_BOX = "Big Box";
 const GAS_STATION = "Gas Station/Convenience Store";
@@ -44,16 +44,18 @@ const URBAN_HOUSE = "House (Urban)";
 const APARTMENT = "Apartment";
 const DOCK = "Dock";
 const TRAIN_STATION = "Train Station";
+// #endregion
 
-// Item Categories
+// #region Item Categories
 const ARMOR = "Armor";
 const WEAPON = "Weapon";
 const FOOD = "Food";
 const AMMO = "Ammo";
 const MEDICINE = "Medicine";
 const GEAR = "Gear";
+// #endregion
 
-// Items
+// #region Items
 const BIKER_GEAR = {
   category: ARMOR,
   name: "Biker Gear",
@@ -1460,6 +1462,7 @@ const WATCH = {
   bulk: "L",
   break: "1",
 };
+// #endregion
 
 const LOOT_AREAS = [
   HARDWARE_STORE,
@@ -1529,7 +1532,6 @@ const ALL_ITEMS = [
   SPORTS_PROTECTION,
   ZDAY_ARMOR,
   IMPROVISED_SHIELD,
-  RIOT_SHIELD,
   BASEBALL_BAT,
   BRANCH,
   BRASS_KNUCKLES,
@@ -1641,9 +1643,6 @@ const ALL_ITEMS = [
   WRENCH,
   BACKPACK,
   HARDHAT,
-  CLOTHES_BASIC,
-  CLOTHES_FANCY,
-  CLOTHES_WINTER,
   HIKING_BOOTS,
   HOLSTER,
   MILITARY_HELMET,
@@ -1653,29 +1652,517 @@ const ALL_ITEMS = [
   WATCH,
 ];
 
+// #region Weapon loot tables
+const IMPROVISED_WEAPONS = [
+  { item: BRANCH, weighting: 1 },
+  { item: BRICK, weighting: 2 },
+  { item: CRUDE_SPEAR, weighting: 1 },
+  { item: SHIV, weighting: 3 },
+  { item: BOTTLE, weighting: 3 },
+  { item: MOLOTOV_COCKTAIL, weighting: 3 },
+];
+const TOOL_WEAPONS = [
+  { item: BRICK, weighting: 3 },
+  { item: GARDEN_SHEARS, weighting: 3 },
+  { item: GOLF_CLUB, weighting: 3 },
+  { item: HAND_AXE, weighting: 3 },
+  { item: KITCHEN_KNIFE, weighting: 3 },
+  { item: POCKET_KNIFE, weighting: 3 },
+  { item: SCREWDRIVER, weighting: 3 },
+  { item: TOOL_HEAVY, weighting: 3 },
+  { item: CHAINSAW, weighting: 3 },
+  { item: FIRE_AXE, weighting: 3 },
+  { item: MACHETE, weighting: 3 },
+  { item: SLEDGEHAMMER, weighting: 3 },
+];
+const SPORTS_WEAPONS = [
+  { item: BASEBALL_BAT, weighting: 3 },
+  { item: GOLF_CLUB, weighting: 3 },
+  { item: HAND_AXE, weighting: 3 },
+  { item: POCKET_KNIFE, weighting: 3 },
+];
+const HUNTING_WEAPONS = [
+  { item: POCKET_KNIFE, weighting: 3 },
+  { item: COMBAT_KNIFE, weighting: 3 },
+  { item: FIRE_AXE, weighting: 3 },
+  { item: CRAFTED_BOW, weighting: 3 },
+  { item: CRUDE_BOW, weighting: 3 },
+  { item: CRUDE_RIFLE, weighting: 3 },
+  { item: DBL_BARREL_SHOTGUN, weighting: 3 },
+  { item: HUNTING_RIFLE, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: COMPOUND_BOW, weighting: 3 },
+  { item: CROSSBOW, weighting: 3 },
+  { item: PUMP_SHOTGUN, weighting: 3 },
+  { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+];
+const POLICE_WEAPONS = [
+  { item: BRASS_KNUCKLES, weighting: 3 },
+  { item: KATANA, weighting: 3 },
+  { item: CRUDE_PISTOL, weighting: 3 },
+  { item: CRUDE_RIFLE, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: PUMP_SHOTGUN, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
+  { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+  { item: SNIPER_RIFLE, weighting: 3 },
+  { item: TEAR_GAS_GRENADE, weighting: 3 },
+];
+const MILITARY_WEAPONS = [
+  { item: COMBAT_KNIFE, weighting: 3 },
+  { item: FRAG_GRENADE, weighting: 3 },
+  { item: INCENDIARY_GRENADE, weighting: 3 },
+  { item: TEAR_GAS_GRENADE, weighting: 3 },
+  { item: HEAVY_MACHINEGUN, weighting: 3 },
+  { item: LIGHT_MACHINEGUN, weighting: 3 },
+  { item: MILITARY_MACHINEGUN, weighting: 3 },
+  { item: PUMP_SHOTGUN, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
+  { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+  { item: SNIPER_RIFLE, weighting: 3 },
+];
+const EXOTIC_MELEE_WEAPONS = [
+  { item: BRASS_KNUCKLES, weighting: 3 },
+  { item: COMBAT_KNIFE, weighting: 3 },
+  { item: FIRE_AXE, weighting: 3 },
+  { item: KATANA, weighting: 3 },
+];
+const EXOTIC_RANGED_WEAPONS = [
+  { item: MOLOTOV_COCKTAIL, weighting: 3 },
+  { item: POCKET_PISTOL, weighting: 3 },
+  { item: COMPOUND_BOW, weighting: 3 },
+  { item: MILITARY_MACHINEGUN, weighting: 3 },
+];
+const RURAL_CIVILIAN_WEAPONS = [
+  { item: BASEBALL_BAT, weighting: 3 },
+  { item: BRANCH, weighting: 3 },
+  { item: BRICK, weighting: 3 },
+  { item: CRAFTED_SPEAR, weighting: 3 },
+  { item: CRUDE_SPEAR, weighting: 3 },
+  { item: GARDEN_SHEARS, weighting: 3 },
+  { item: GOLF_CLUB, weighting: 3 },
+  { item: HAND_AXE, weighting: 3 },
+  { item: KITCHEN_KNIFE, weighting: 3 },
+  { item: POCKET_KNIFE, weighting: 3 },
+  { item: SCREWDRIVER, weighting: 3 },
+  { item: TOOL_HEAVY, weighting: 3 },
+  { item: CHAINSAW, weighting: 3 },
+  { item: FIRE_AXE, weighting: 3 },
+  { item: MACHETE, weighting: 3 },
+  { item: SLEDGEHAMMER, weighting: 3 },
+  { item: BOTTLE, weighting: 3 },
+  { item: DBL_BARREL_SHOTGUN, weighting: 3 },
+  { item: HUNTING_RIFLE, weighting: 3 },
+  { item: POCKET_PISTOL, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: COMPOUND_BOW, weighting: 3 },
+  { item: CROSSBOW, weighting: 3 },
+  { item: HAND_CANNON, weighting: 3 },
+  { item: PUMP_SHOTGUN, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
+  { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+];
+const SUBURBAN_CIVILIAN_WEAPONS = [
+  { item: BASEBALL_BAT, weighting: 3 },
+  { item: BRANCH, weighting: 3 },
+  { item: BRICK, weighting: 3 },
+  { item: CRAFTED_SPEAR, weighting: 3 },
+  { item: CRUDE_SPEAR, weighting: 3 },
+  { item: GARDEN_SHEARS, weighting: 3 },
+  { item: GOLF_CLUB, weighting: 3 },
+  { item: KITCHEN_KNIFE, weighting: 3 },
+  { item: POCKET_KNIFE, weighting: 3 },
+  { item: SCREWDRIVER, weighting: 3 },
+  { item: SLEDGEHAMMER, weighting: 3 },
+  { item: BOTTLE, weighting: 3 },
+  { item: POCKET_PISTOL, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: HAND_CANNON, weighting: 3 },
+  { item: PUMP_SHOTGUN, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
+  { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+];
+const URBAN_CIVILIAN_WEAPONS = [
+  { item: BASEBALL_BAT, weighting: 3 },
+  { item: GOLF_CLUB, weighting: 3 },
+  { item: KITCHEN_KNIFE, weighting: 3 },
+  { item: POCKET_KNIFE, weighting: 3 },
+  { item: SCREWDRIVER, weighting: 3 },
+  { item: BOTTLE, weighting: 3 },
+  { item: POCKET_PISTOL, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: HAND_CANNON, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
+];
+// #endregion
+
+// #region Armor loot tables
+const IMPROVISED_ARMOR = [
+  { item: SPORTS_PROTECTION, weighting: 3 },
+  { item: IMPROVISED_SHIELD, weighting: 3 },
+];
+const CIVILIAN_ARMOR = [
+  { item: BIKER_GEAR, weighting: 3 },
+  { item: CLOTHES_BASIC, weighting: 3 },
+  { item: CLOTHES_FANCY, weighting: 3 },
+  { item: CLOTHES_WINTER, weighting: 3 },
+  { item: WORKWEAR, weighting: 3 },
+  { item: SPORTS_PROTECTION, weighting: 3 },
+  { item: HARDHAT, weighting: 3 },
+];
+const POLICE_ARMOR = [
+  { item: BULLET_PROOF_VEST, weighting: 3 },
+  { item: FIREFIGHTER_GEAR, weighting: 3 },
+  { item: HAZMAT_SUIT, weighting: 3 },
+  { item: POLICE_BODY_ARMOR, weighting: 3 },
+  { item: RIOT_SHIELD, weighting: 3 },
+  { item: MILITARY_HELMET, weighting: 3 },
+];
+const MILITARY_ARMOR = [
+  { item: BULLET_PROOF_VEST, weighting: 3 },
+  { item: HAZMAT_SUIT, weighting: 3 },
+  { item: INFANTRY_ARMOR, weighting: 3 },
+  { item: ZDAY_ARMOR, weighting: 3 },
+  { item: RIOT_SHIELD, weighting: 3 },
+  { item: MILITARY_HELMET, weighting: 3 },
+];
+const EXOTIC_ARMOR = [
+  { item: LAB_GEAR, weighting: 3 },
+  { item: HAZMAT_SUIT, weighting: 3 },
+  { item: ZDAY_ARMOR, weighting: 3 },
+];
+const CRAFTED_ARMOR = [
+  { item: LEATHER_ARMOR, weighting: 3 },
+  { item: LIGHT_PATCHWORK, weighting: 3 },
+  { item: HEAVY_PATCHWORK, weighting: 3 },
+  { item: IRON_ARMOR, weighting: 3 },
+];
+
+// #endregion
+
+// #region Ammo loot tables
+const CIVILIAN_AMMO = [
+  { item: ARROWS_10, weighting: 3 },
+  { item: BULLETS_PISTOL_10, weighting: 3 },
+  { item: BULLETS_RIFLE_10, weighting: 3 },
+];
+const POLICE_AMMO = [
+  { item: BULLETS_PISTOL_10, weighting: 3 },
+  { item: BULLETS_RIFLE_10, weighting: 3 },
+  { item: PIERCING_BULLETS_PISTOL_5, weighting: 3 },
+  { item: PIERCING_BULLETS_RIFLE_OR_SHOTGUN_5, weighting: 3 },
+];
+const MILITARY_AMMO = [
+  { item: PIERCING_BULLETS_PISTOL_5, weighting: 3 },
+  { item: PIERCING_BULLETS_RIFLE_OR_SHOTGUN_5, weighting: 3 },
+  { item: ZROUND_BULLETS_PISTOL_1, weighting: 3 },
+  { item: ZROUND_BULLETS_RIFLE_1, weighting: 3 },
+];
+const EXOTIC_AMMO = [
+  { item: ZROUND_BULLETS_PISTOL_1, weighting: 3 },
+  { item: ZROUND_BULLETS_RIFLE_1, weighting: 3 },
+];
+// #endregion
+
+// #region Food loot tables
+const CIVILIAN_FOOD = [
+  { item: CANNED_GOODS, weighting: 3 },
+  { item: CANNED_GOODS_EXPIRED, weighting: 3 },
+  { item: RATION_BAR, weighting: 3 },
+  { item: RATION_DAY, weighting: 3 },
+  { item: SOFT_DRINK, weighting: 3 },
+  { item: WATER, weighting: 3 },
+  { item: VITAMINS, weighting: 3 },
+];
+const GROCERY_FOOD = [
+  { item: CANNED_GOODS, weighting: 3 },
+  { item: CANNED_GOODS_EXPIRED, weighting: 3 },
+  { item: SOFT_DRINK, weighting: 3 },
+  { item: WATER, weighting: 3 },
+  { item: VITAMINS, weighting: 3 },
+];
+const LIQUOR_FOOD = [
+  { item: BEER, weighting: 3 },
+  { item: LIQUOR, weighting: 3 },
+  { item: SOFT_DRINK, weighting: 3 },
+];
+const OUTDOOR_FOOD = [
+  { item: RATION_BAR, weighting: 3 },
+  { item: RATION_DAY, weighting: 3 },
+  { item: SOFT_DRINK, weighting: 3 },
+  { item: WATER, weighting: 3 },
+  { item: WATER_PURIFICATION_TABLETS, weighting: 3 },
+];
+// #endregion
+
+// #region Medicine loot tables
+const CIVILIAN_MEDICINE = [
+  { item: ASPIRIN, weighting: 3 },
+  { item: BANDAGES, weighting: 3 },
+  { item: COLD_PACK, weighting: 3 },
+  { item: FIRST_AID_KIT, weighting: 3 },
+  { item: SPLINT, weighting: 3 },
+  { item: VITAMINS, weighting: 3 },
+  { item: WATER_PURIFICATION_TABLETS, weighting: 3 },
+];
+const MILITARY_MEDICINE = [
+  { item: ASPIRIN, weighting: 3 },
+  { item: BANDAGES, weighting: 3 },
+  { item: COLD_PACK, weighting: 3 },
+  { item: FIRST_AID_KIT, weighting: 3 },
+  { item: SEDATIVE, weighting: 3 },
+  { item: SPLINT, weighting: 3 },
+  { item: SURGICAL_KIT, weighting: 3 },
+  { item: VITAMINS, weighting: 3 },
+  { item: WATER_PURIFICATION_TABLETS, weighting: 3 },
+  { item: ZNOC, weighting: 3 },
+];
+const ADVANCED_MEDICINE = [
+  { item: ASPIRIN, weighting: 3 },
+  { item: BANDAGES, weighting: 3 },
+  { item: COLD_PACK, weighting: 3 },
+  { item: FIRST_AID_KIT, weighting: 3 },
+  { item: SEDATIVE, weighting: 3 },
+  { item: SPLINT, weighting: 3 },
+  { item: SURGICAL_KIT, weighting: 3 },
+  { item: ZNOC, weighting: 3 },
+];
+// #endregion
+
+// #region Gear loot tables
+const OUTDOOR_GEAR = [
+  { item: BEDROLL, weighting: 3 },
+  { item: CANTEEN, weighting: 3 },
+  { item: CLIMBING_KIT, weighting: 3 },
+  { item: COMPASS, weighting: 3 },
+  { item: FLASHLIGHT, weighting: 3 },
+  { item: HEADLIGHT, weighting: 3 },
+  { item: LIGHTER, weighting: 3 },
+  { item: MAP_LOCAL, weighting: 3 },
+  { item: MULTITOOL, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: RADIO_CRANK, weighting: 3 },
+  { item: ROPE, weighting: 3 },
+  { item: SHOVEL, weighting: 3 },
+  { item: TARP, weighting: 3 },
+  { item: TENT, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: BACKPACK, weighting: 3 },
+  { item: HIKING_BOOTS, weighting: 3 },
+  { item: RAINCOAT, weighting: 3 },
+];
+const DIY_GEAR = [
+  { item: AUTOMOTIVE_KIT, weighting: 3 },
+  { item: BATTERY_SMALL, weighting: 3 },
+  { item: BATTERY_LARGE, weighting: 3 },
+  { item: CROWBAR, weighting: 3 },
+  { item: DUCT_TAPE, weighting: 3 },
+  { item: GASOLINE, weighting: 3 },
+  { item: GENERATOR, weighting: 3 },
+  { item: HAMMER, weighting: 3 },
+  { item: MACHINERY_KIT, weighting: 3 },
+  { item: MULTITOOL, weighting: 3 },
+  { item: ROPE, weighting: 3 },
+  { item: SHOVEL, weighting: 3 },
+  { item: SIPHON_KIT, weighting: 3 },
+  { item: WRENCH, weighting: 3 },
+  { item: TOOL_BELT, weighting: 3 },
+];
+const KNOWLEDGE_GEAR = [
+  { item: LAPTOP, weighting: 3 },
+  { item: MAP_LOCAL, weighting: 3 },
+  { item: REFERENCE_BOOKS, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: RADIO_CRANK, weighting: 3 },
+  { item: TRANSLATION_DICTIONARY, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: WATCH, weighting: 3 },
+];
+const ELECTRONIC_GEAR = [
+  { item: BATTERY_SMALL, weighting: 3 },
+  { item: BATTERY_LARGE, weighting: 3 },
+  { item: FLASHLIGHT, weighting: 3 },
+  { item: GASOLINE, weighting: 3 },
+  { item: GENERATOR, weighting: 3 },
+  { item: HEADLIGHT, weighting: 3 },
+  { item: LAPTOP, weighting: 3 },
+  { item: POWER_SHUNT, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: RADIO_CRANK, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: WATCH, weighting: 3 },
+];
+const RURAL_GEAR = [
+  { item: AUTOMOTIVE_KIT, weighting: 3 },
+  { item: BEDROLL, weighting: 3 },
+  { item: BATTERY_SMALL, weighting: 3 },
+  { item: BATTERY_LARGE, weighting: 3 },
+  { item: CANTEEN, weighting: 3 },
+  { item: CROWBAR, weighting: 3 },
+  { item: DUCT_TAPE, weighting: 3 },
+  { item: FLASHLIGHT, weighting: 3 },
+  { item: GASOLINE, weighting: 3 },
+  { item: GENERATOR, weighting: 3 },
+  { item: HAMMER, weighting: 3 },
+  { item: HEADLIGHT, weighting: 3 },
+  { item: LIGHTER, weighting: 3 },
+  { item: MACHINERY_KIT, weighting: 3 },
+  { item: MAP_LOCAL, weighting: 3 },
+  { item: MULTITOOL, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: ROPE, weighting: 3 },
+  { item: SHOVEL, weighting: 3 },
+  { item: SIPHON_KIT, weighting: 3 },
+  { item: SKILLET, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: WRENCH, weighting: 3 },
+  { item: BACKPACK, weighting: 3 },
+  { item: HIKING_BOOTS, weighting: 3 },
+  { item: HOLSTER, weighting: 3 },
+  { item: TOOL_BELT, weighting: 3 },
+  { item: RAINCOAT, weighting: 3 },
+  { item: WATCH, weighting: 3 },
+];
+const SUBURBAN_GEAR = [
+  { item: AUTOMOTIVE_KIT, weighting: 3 },
+  { item: BEDROLL, weighting: 3 },
+  { item: BATTERY_SMALL, weighting: 3 },
+  { item: BATTERY_LARGE, weighting: 3 },
+  { item: CROWBAR, weighting: 3 },
+  { item: DUCT_TAPE, weighting: 3 },
+  { item: FLASHLIGHT, weighting: 3 },
+  { item: GASOLINE, weighting: 3 },
+  { item: GENERATOR, weighting: 3 },
+  { item: HAMMER, weighting: 3 },
+  { item: HEADLIGHT, weighting: 3 },
+  { item: LAPTOP, weighting: 3 },
+  { item: LIGHTER, weighting: 3 },
+  { item: MAKEUP_KIT, weighting: 3 },
+  { item: MAP_LOCAL, weighting: 3 },
+  { item: MULTITOOL, weighting: 3 },
+  { item: MUSICAL_INSTRUMENT, weighting: 3 },
+  { item: REFERENCE_BOOKS, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: ROPE, weighting: 3 },
+  { item: SHOVEL, weighting: 3 },
+  { item: SKILLET, weighting: 3 },
+  { item: TRANSLATION_DICTIONARY, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: WRENCH, weighting: 3 },
+  { item: BACKPACK, weighting: 3 },
+  { item: HOLSTER, weighting: 3 },
+  { item: TOOL_BELT, weighting: 3 },
+  { item: RAINCOAT, weighting: 3 },
+  { item: URBAN_CAMOUFLAGE, weighting: 3 },
+  { item: WATCH, weighting: 3 },
+];
+const URBAN_GEAR = [
+  { item: BATTERY_SMALL, weighting: 3 },
+  { item: BATTERY_LARGE, weighting: 3 },
+  { item: DUCT_TAPE, weighting: 3 },
+  { item: FLASHLIGHT, weighting: 3 },
+  { item: HAMMER, weighting: 3 },
+  { item: LAPTOP, weighting: 3 },
+  { item: MAKEUP_KIT, weighting: 3 },
+  { item: MULTITOOL, weighting: 3 },
+  { item: MUSICAL_INSTRUMENT, weighting: 3 },
+  { item: POWER_SHUNT, weighting: 3 },
+  { item: REFERENCE_BOOKS, weighting: 3 },
+  { item: RADIO_BATTERY, weighting: 3 },
+  { item: SKILLET, weighting: 3 },
+  { item: TRANSLATION_DICTIONARY, weighting: 3 },
+  { item: WALKIE_TALKIE, weighting: 3 },
+  { item: WRENCH, weighting: 3 },
+  { item: BACKPACK, weighting: 3 },
+  { item: RAINCOAT, weighting: 3 },
+  { item: URBAN_CAMOUFLAGE, weighting: 3 },
+  { item: WATCH, weighting: 3 },
+];
+// #endregion
+
+const LOOT_TABLES = [
+  IMPROVISED_WEAPONS,
+  TOOL_WEAPONS,
+  SPORTS_WEAPONS,
+  HUNTING_WEAPONS,
+  POLICE_WEAPONS,
+  MILITARY_WEAPONS,
+  EXOTIC_MELEE_WEAPONS,
+  EXOTIC_RANGED_WEAPONS,
+  RURAL_CIVILIAN_WEAPONS,
+  SUBURBAN_CIVILIAN_WEAPONS,
+  URBAN_CIVILIAN_WEAPONS,
+
+  IMPROVISED_ARMOR,
+  CIVILIAN_ARMOR,
+  POLICE_ARMOR,
+  MILITARY_ARMOR,
+  EXOTIC_ARMOR,
+  CRAFTED_ARMOR,
+
+  CIVILIAN_AMMO,
+  POLICE_AMMO,
+  MILITARY_AMMO,
+  EXOTIC_AMMO,
+
+  CIVILIAN_FOOD,
+  GROCERY_FOOD,
+  LIQUOR_FOOD,
+  OUTDOOR_FOOD,
+
+  CIVILIAN_MEDICINE,
+  MILITARY_MEDICINE,
+  ADVANCED_MEDICINE,
+
+  OUTDOOR_GEAR,
+  DIY_GEAR,
+  KNOWLEDGE_GEAR,
+  ELECTRONIC_GEAR,
+  RURAL_GEAR,
+  SUBURBAN_GEAR,
+  URBAN_GEAR,
+];
+
 const LOOT_TABLE = {
-  [HARDWARE_STORE]: [
-    {
-      item: TOOL_BELT,
-      weighting: 3,
-    },
-    {
-      item: WRENCH,
-      weighting: 1,
-    },
-    {
-      item: IMPROVISED_SHIELD,
-      weighting: 2,
-    },
+  [HARDWARE_STORE]: [...TOOL_WEAPONS, ...DIY_GEAR, ...ELECTRONIC_GEAR],
+  [BIG_BOX]: [
+    ...TOOL_WEAPONS,
+    ...SPORTS_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...IMPROVISED_ARMOR,
+    ...CIVILIAN_FOOD,
+    ...LIQUOR_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...OUTDOOR_GEAR,
+    ...DIY_GEAR,
+    ...KNOWLEDGE_GEAR,
   ],
-  [BIG_BOX]: [],
-  [GAS_STATION]: [],
-  [SUPERMARKET]: [],
-  [DEPARTMENT_STORE]: [],
-  [OUTDOORS_STORE]: [],
-  [SPORTS_STORE]: [],
-  [MEMBERS_CLUB]: [],
-  [CLOTHING_STORE]: [],
+  [GAS_STATION]: [...CIVILIAN_FOOD, ...LIQUOR_FOOD, ...CIVILIAN_MEDICINE],
+  [SUPERMARKET]: [...CIVILIAN_FOOD, ...LIQUOR_FOOD, ...CIVILIAN_MEDICINE],
+  [DEPARTMENT_STORE]: [...CIVILIAN_ARMOR, ...ELECTRONIC_GEAR],
+  [OUTDOORS_STORE]: [
+    ...SPORTS_WEAPONS,
+    ...HUNTING_WEAPONS,
+    ...CIVILIAN_AMMO,
+    ...CIVILIAN_ARMOR,
+    ...OUTDOOR_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...OUTDOOR_GEAR,
+  ],
+  [SPORTS_STORE]: [...SPORTS_WEAPONS, ...IMPROVISED_ARMOR, ...CIVILIAN_ARMOR],
+  [MEMBERS_CLUB]: [
+    ...TOOL_WEAPONS,
+    ...SPORTS_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...IMPROVISED_ARMOR,
+    ...CIVILIAN_FOOD,
+    ...LIQUOR_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...OUTDOOR_GEAR,
+    ...DIY_GEAR,
+    ...KNOWLEDGE_GEAR,
+  ],
+  [CLOTHING_STORE]: [...CIVILIAN_ARMOR],
   [OFFICE_SUPPLY]: [],
   [PET_STORE]: [],
   [CRAFT_STORE]: [],
