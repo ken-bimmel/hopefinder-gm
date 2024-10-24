@@ -44,6 +44,7 @@ const URBAN_HOUSE = "House (Urban)";
 const APARTMENT = "Apartment";
 const DOCK = "Dock";
 const TRAIN_STATION = "Train Station";
+const LIQUOR_STORE = "Liquor Store";
 // #endregion
 
 // #region Item Categories
@@ -1510,6 +1511,7 @@ const LOOT_AREAS = [
   APARTMENT,
   DOCK,
   TRAIN_STATION,
+  LIQUOR_STORE,
 ];
 
 const ALL_ITEMS = [
@@ -1695,6 +1697,12 @@ const HUNTING_WEAPONS = [
   { item: CROSSBOW, weighting: 3 },
   { item: PUMP_SHOTGUN, weighting: 3 },
   { item: SEMIAUTO_SHOTGUN, weighting: 3 },
+];
+const HANDGUN_WEAPONS = [
+  { item: POCKET_PISTOL, weighting: 3 },
+  { item: REVOLVER, weighting: 3 },
+  { item: HAND_CANNON, weighting: 3 },
+  { item: SEMIAUTO_PISTOL, weighting: 3 },
 ];
 const POLICE_WEAPONS = [
   { item: BRASS_KNUCKLES, weighting: 3 },
@@ -1925,7 +1933,6 @@ const ADVANCED_MEDICINE = [
   { item: SEDATIVE, weighting: 3 },
   { item: SPLINT, weighting: 3 },
   { item: SURGICAL_KIT, weighting: 3 },
-  { item: ZNOC, weighting: 3 },
 ];
 // #endregion
 
@@ -1977,6 +1984,10 @@ const KNOWLEDGE_GEAR = [
   { item: TRANSLATION_DICTIONARY, weighting: 3 },
   { item: WALKIE_TALKIE, weighting: 3 },
   { item: WATCH, weighting: 3 },
+];
+const BOOKS_GEAR = [
+  { item: REFERENCE_BOOKS, weighting: 3 },
+  { item: TRANSLATION_DICTIONARY, weighting: 3 },
 ];
 const ELECTRONIC_GEAR = [
   { item: BATTERY_SMALL, weighting: 3 },
@@ -2085,6 +2096,7 @@ const LOOT_TABLES = [
   TOOL_WEAPONS,
   SPORTS_WEAPONS,
   HUNTING_WEAPONS,
+  HANDGUN_WEAPONS,
   POLICE_WEAPONS,
   MILITARY_WEAPONS,
   EXOTIC_MELEE_WEAPONS,
@@ -2117,6 +2129,7 @@ const LOOT_TABLES = [
   OUTDOOR_GEAR,
   DIY_GEAR,
   KNOWLEDGE_GEAR,
+  BOOKS_GEAR,
   ELECTRONIC_GEAR,
   RURAL_GEAR,
   SUBURBAN_GEAR,
@@ -2139,6 +2152,7 @@ const LOOT_TABLE = {
   ],
   [GAS_STATION]: [...CIVILIAN_FOOD, ...LIQUOR_FOOD, ...CIVILIAN_MEDICINE],
   [SUPERMARKET]: [...CIVILIAN_FOOD, ...LIQUOR_FOOD, ...CIVILIAN_MEDICINE],
+  [LIQUOR_STORE]: [...LIQUOR_FOOD, ...IMPROVISED_WEAPONS],
   [DEPARTMENT_STORE]: [...CIVILIAN_ARMOR, ...ELECTRONIC_GEAR],
   [OUTDOORS_STORE]: [
     ...SPORTS_WEAPONS,
@@ -2164,24 +2178,59 @@ const LOOT_TABLE = {
   ],
   [CLOTHING_STORE]: [...CIVILIAN_ARMOR],
   [OFFICE_SUPPLY]: [],
-  [PET_STORE]: [],
-  [CRAFT_STORE]: [],
-  [ELECTRONICS_STORE]: [],
-  [RESTAURANT]: [],
-  [AUTO_PARTS]: [],
-  [FURNITURE_STORE]: [],
-  [GUN_STORE]: [],
-  [NOVELTY_STORE]: [],
-  [BOOK_STORE]: [],
-  [PHARMACY]: [],
-  [BAR]: [],
-  [DENTIST_OFFICE]: [],
-  [DOCTORS_OFFICE]: [],
-  [HOSPITAL]: [],
-  [POLICE_STATION]: [],
-  [FIRE_STATION]: [],
+  [PET_STORE]: [{ item: CANNED_GOODS_EXPIRED, weighting: 1 }],
+  [CRAFT_STORE]: [...DIY_GEAR],
+  [ELECTRONICS_STORE]: [...ELECTRONIC_GEAR],
+  [RESTAURANT]: [...GROCERY_FOOD, ...LIQUOR_FOOD],
+  [AUTO_PARTS]: [...DIY_GEAR],
+  [FURNITURE_STORE]: [
+    { item: TOOL_HEAVY, weighting: 3 },
+    { item: BRANCH, weighting: 3 },
+    { item: CRUDE_SPEAR, weighting: 3 },
+  ],
+  [GUN_STORE]: [...HUNTING_WEAPONS, ...HANDGUN_WEAPONS],
+  [NOVELTY_STORE]: [...EXOTIC_MELEE_WEAPONS, ...CIVILIAN_ARMOR],
+  [BOOK_STORE]: [...BOOKS_GEAR, { item: FLASHLIGHT, weighting: 1 }],
+  [PHARMACY]: [...ADVANCED_MEDICINE],
+  [BAR]: [...LIQUOR_FOOD],
+  [DENTIST_OFFICE]: [...ADVANCED_MEDICINE],
+  [DOCTORS_OFFICE]: [...ADVANCED_MEDICINE],
+  [HOSPITAL]: [...MILITARY_MEDICINE],
+  [POLICE_STATION]: [
+    ...POLICE_WEAPONS,
+    ...POLICE_AMMO,
+    ...POLICE_ARMOR,
+    ...CIVILIAN_MEDICINE,
+    ...ELECTRONIC_GEAR,
+  ],
+  [FIRE_STATION]: [
+    { item: TOOL_HEAVY, weighting: 3 },
+    { item: FIRE_AXE, weighting: 3 },
+    { item: FIREFIGHTER_GEAR, weighting: 3 },
+    { item: HAZMAT_SUIT, weighting: 3 },
+    { item: CLIMBING_KIT, weighting: 3 },
+    { item: FLASHLIGHT, weighting: 3 },
+    { item: HEADLIGHT, weighting: 3 },
+    { item: LIGHTER, weighting: 3 },
+    { item: MAP_LOCAL, weighting: 3 },
+    { item: MULTITOOL, weighting: 3 },
+    { item: RADIO_BATTERY, weighting: 3 },
+    { item: RADIO_CRANK, weighting: 3 },
+    { item: ROPE, weighting: 3 },
+    { item: WALKIE_TALKIE, weighting: 3 },
+    ...ADVANCED_MEDICINE,
+  ],
   [ANIMAL_CONTROL]: [],
-  [NATIONAL_GUARD]: [],
+  [NATIONAL_GUARD]: [
+    ...MILITARY_WEAPONS,
+    ...MILITARY_ARMOR,
+    ...MILITARY_AMMO,
+    ...MILITARY_MEDICINE,
+    ...OUTDOOR_FOOD,
+    ...OUTDOOR_GEAR,
+    ...DIY_GEAR,
+    ...ELECTRONIC_GEAR,
+  ],
   [SCHOOL]: [],
   [SELF_STORAGE]: [],
   [MUSIC_STORE]: [],
@@ -2193,10 +2242,38 @@ const LOOT_TABLE = {
   [BANK]: [],
   [MUSEUM]: [],
   [BARN]: [],
-  [RURAL_HOUSE]: [],
-  [SUBURBAN_HOUSE]: [],
-  [URBAN_HOUSE]: [],
-  [APARTMENT]: [],
+  [RURAL_HOUSE]: [
+    ...RURAL_CIVILIAN_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...CIVILIAN_AMMO,
+    ...CIVILIAN_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...RURAL_GEAR,
+  ],
+  [SUBURBAN_HOUSE]: [
+    ...SUBURBAN_CIVILIAN_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...CIVILIAN_AMMO,
+    ...CIVILIAN_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...SUBURBAN_GEAR,
+  ],
+  [URBAN_HOUSE]: [
+    ...URBAN_CIVILIAN_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...CIVILIAN_AMMO,
+    ...CIVILIAN_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...URBAN_GEAR,
+  ],
+  [APARTMENT]: [
+    ...URBAN_CIVILIAN_WEAPONS,
+    ...CIVILIAN_ARMOR,
+    ...CIVILIAN_AMMO,
+    ...CIVILIAN_FOOD,
+    ...CIVILIAN_MEDICINE,
+    ...URBAN_GEAR,
+  ],
   [DOCK]: [],
   [TRAIN_STATION]: [],
 };
