@@ -1,4 +1,4 @@
-import { WEAPON, ARMOR, GEAR_CATEGORIES } from "../data/lootTables";
+import { ARMOR, GEAR_CATEGORIES, WEAPON } from "../data/itemCategories";
 
 function filterToArmorItems(items) {
   return items?.filter((item) => item.category === ARMOR);

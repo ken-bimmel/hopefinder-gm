@@ -6,7 +6,8 @@ import {
   Card,
   CardHeader,
 } from "@mui/material";
-import { LOOT_AREAS, LOOT_TABLE } from "../data/lootTables";
+import { LOOT_TABLE } from "../data/lootTables";
+import { LOOT_AREAS } from "../data/lootableAreas";
 import ArmorTable from "./ArmorTable";
 import WeaponTable from "./WeaponTable";
 import GearTable from "./GearTable";

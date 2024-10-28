@@ -13,7 +13,7 @@ import {
   FormGroup,
   Tooltip,
 } from "@mui/material";
-import { LOOT_AREAS } from "../data/lootTables";
+import { LOOT_AREAS } from "../data/lootableAreas";
 import rollTable from "../services/rollTable";
 import ArmorTable from "./ArmorTable";
 import WeaponTable from "./WeaponTable";
