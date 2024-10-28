@@ -1,10 +1,12 @@
 import { LOOT_TABLE } from "../data/lootTables";
+import { dedupeLootTable } from "./dedupeTable";
 import { nameSortComparator } from "./sortDrops";
 
 function buildWeightedTable(table) {
   const weightedTable = [];
-  const deDupedTable = new Set(table);
-  for (let entry of deDupedTable) {
+  const dedupedTable = dedupeLootTable(table);
+  console.log({ dedupedTable, table });
+  for (let entry of dedupedTable) {
     const weighting = entry.weighting;
     for (let i = 0; i < weighting; i++) {
       weightedTable.push(entry.item);

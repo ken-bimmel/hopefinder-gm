@@ -18,11 +18,6 @@ import rollTable from "../services/rollTable";
 import ArmorTable from "./ArmorTable";
 import WeaponTable from "./WeaponTable";
 import GearTable from "./GearTable";
-import {
-  filterToArmorItems,
-  filterToGearItems,
-  filterToWeaponItems,
-} from "../services/filterDrops";
 
 function LootRoller() {
   const [selectedRollTable, setSelectedRollTable] = useState(LOOT_AREAS[0]);
@@ -142,13 +137,13 @@ function LootRoller() {
             wrap="nowrap"
           >
             <Grid2 item style={{ width: "100%", padding: "12px" }}>
-              <ArmorTable armorItems={filterToArmorItems(rolledItems)} />
+              <ArmorTable rolledItems={rolledItems} />
             </Grid2>
             <Grid2 item style={{ width: "100%", padding: "12px" }}>
-              <WeaponTable weaponItems={filterToWeaponItems(rolledItems)} />
+              <WeaponTable rolledItems={rolledItems} />
             </Grid2>
             <Grid2 item style={{ width: "100%", padding: "12px" }}>
-              <GearTable gearItems={filterToGearItems(rolledItems)} />
+              <GearTable rolledItems={rolledItems} />
             </Grid2>
           </Grid2>
         </Grid2>

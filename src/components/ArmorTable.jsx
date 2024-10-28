@@ -9,8 +9,10 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { filterToArmorItems } from "../services/filterDrops";
 
-function ArmorTable({ armorItems, includeWeighting = false }) {
+function ArmorTable({ rolledItems, includeWeighting = false }) {
+  const armorItems = filterToArmorItems(rolledItems) ?? [];
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -63,7 +65,7 @@ function ArmorTable({ armorItems, includeWeighting = false }) {
 }
 
 ArmorTable.propTypes = {
-  armorItems: PropTypes.array,
+  rolledItems: PropTypes.array,
   includeWeighting: PropTypes.bool,
 };
 

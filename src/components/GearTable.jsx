@@ -9,8 +9,10 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { filterToGearItems } from "../services/filterDrops";
 
-function GearTable({ gearItems, includeWeighting = false }) {
+function GearTable({ rolledItems, includeWeighting = false }) {
+  const gearItems = filterToGearItems(rolledItems) ?? [];
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -55,7 +57,7 @@ function GearTable({ gearItems, includeWeighting = false }) {
 }
 
 GearTable.propTypes = {
-  gearItems: PropTypes.array,
+  rolledItems: PropTypes.array,
   includeWeighting: PropTypes.bool,
 };
 

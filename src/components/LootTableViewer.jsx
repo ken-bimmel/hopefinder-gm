@@ -36,8 +36,6 @@ function LootRoller() {
     setTableItems(flattenAndSort(LOOT_TABLE[event.target.value]));
   };
 
-  console.log({ selectedRollTable, tableItems, LOOT_AREAS, LOOT_TABLE });
-
   return (
     <Card style={{ maxHeight: "calc(100vh - 80px)" }}>
       <CardHeader title="Loot Table Viewer" />

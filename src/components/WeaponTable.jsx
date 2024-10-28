@@ -9,8 +9,10 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { filterToWeaponItems } from "../services/filterDrops";
 
-function WeaponTable({ weaponItems, includeWeighting = false }) {
+function WeaponTable({ rolledItems, includeWeighting = false }) {
+  const weaponItems = filterToWeaponItems(rolledItems) ?? [];
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -65,7 +67,7 @@ function WeaponTable({ weaponItems, includeWeighting = false }) {
 }
 
 WeaponTable.propTypes = {
-  weaponItems: PropTypes.array,
+  rolledItems: PropTypes.array,
   includeWeighting: PropTypes.bool,
 };
 
