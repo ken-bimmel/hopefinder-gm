@@ -2,7 +2,7 @@ import { LOOT_TABLE } from "../data/lootTables";
 
 function buildWeightedTable(table) {
   const weightedTable = [];
-  const deDupedTable = new Set(...table);
+  const deDupedTable = new Set(table);
   for (let entry of deDupedTable) {
     const weighting = entry.weighting;
     for (let i = 0; i < weighting; i++) {
@@ -18,7 +18,7 @@ function rollOnTable(table) {
   return table[randomIndex];
 }
 
-function rollTable(selectedTable, targetBarter) {
+function rollTable(selectedTable, targetBarter, includeFlavorBarter) {
   const table = LOOT_TABLE[selectedTable];
   const weightedTable = buildWeightedTable(table);
   let accruedBarter = 0;

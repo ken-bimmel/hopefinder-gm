@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-function WeaponTable({ weaponItems }) {
+function WeaponTable({ weaponItems, includeWeighting = false }) {
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -32,6 +32,7 @@ function WeaponTable({ weaponItems }) {
             <TableCell align="right">Reload</TableCell>
             <TableCell align="right">Bulk</TableCell>
             <TableCell align="right">Break</TableCell>
+            {includeWeighting && <TableCell align="right">Weighting</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -52,6 +53,9 @@ function WeaponTable({ weaponItems }) {
               <TableCell align="right">{row.reload}</TableCell>
               <TableCell align="right">{row.bulk}</TableCell>
               <TableCell align="right">{row.break}</TableCell>
+              {includeWeighting && (
+                <TableCell align="right">{row.weighting}</TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
@@ -62,6 +66,7 @@ function WeaponTable({ weaponItems }) {
 
 WeaponTable.propTypes = {
   weaponItems: PropTypes.array,
+  includeWeighting: PropTypes.bool,
 };
 
 export default WeaponTable;

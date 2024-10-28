@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-function GearTable({ gearItems }) {
+function GearTable({ gearItems, includeWeighting = false }) {
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -27,6 +27,7 @@ function GearTable({ gearItems }) {
             <TableCell align="right">Barter</TableCell>
             <TableCell align="right">Bulk</TableCell>
             <TableCell align="right">Break</TableCell>
+            {includeWeighting && <TableCell align="right">Weighting</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -42,6 +43,9 @@ function GearTable({ gearItems }) {
               <TableCell align="right">{row.barter}</TableCell>
               <TableCell align="right">{row.bulk}</TableCell>
               <TableCell align="right">{row.break}</TableCell>
+              {includeWeighting && (
+                <TableCell align="right">{row.weighting}</TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
@@ -52,6 +56,7 @@ function GearTable({ gearItems }) {
 
 GearTable.propTypes = {
   gearItems: PropTypes.array,
+  includeWeighting: PropTypes.bool,
 };
 
 export default GearTable;

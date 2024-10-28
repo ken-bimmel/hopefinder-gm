@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-function ArmorTable({ armorItems }) {
+function ArmorTable({ armorItems, includeWeighting = false }) {
   return (
     <TableContainer component={Paper}>
       <Typography
@@ -31,6 +31,7 @@ function ArmorTable({ armorItems }) {
             <TableCell align="right">Resist</TableCell>
             <TableCell align="right">Bulk</TableCell>
             <TableCell align="right">Break</TableCell>
+            {includeWeighting && <TableCell align="right">Weighting</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,6 +51,9 @@ function ArmorTable({ armorItems }) {
               <TableCell align="right">{row.resist}</TableCell>
               <TableCell align="right">{row.bulk}</TableCell>
               <TableCell align="right">{row.break}</TableCell>
+              {includeWeighting && (
+                <TableCell align="right">{row.weighting}</TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
@@ -60,6 +64,7 @@ function ArmorTable({ armorItems }) {
 
 ArmorTable.propTypes = {
   armorItems: PropTypes.array,
+  includeWeighting: PropTypes.bool,
 };
 
 export default ArmorTable;

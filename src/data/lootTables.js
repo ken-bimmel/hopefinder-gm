@@ -2136,6 +2136,8 @@ const LOOT_TABLES = [
   URBAN_GEAR,
 ];
 
+//Because of the construction method used on these loot tables, the raw list
+//may contain duplicates. This should be handled anywhere you use these tables
 const LOOT_TABLE = {
   [HARDWARE_STORE]: [...TOOL_WEAPONS, ...DIY_GEAR, ...ELECTRONIC_GEAR],
   [BIG_BOX]: [
