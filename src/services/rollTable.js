@@ -1,4 +1,5 @@
 import { LOOT_TABLE } from "../data/lootTables";
+import { nameSortComparator } from "./sortDrops";
 
 function buildWeightedTable(table) {
   const weightedTable = [];
@@ -28,7 +29,7 @@ function rollTable(selectedTable, targetBarter, includeFlavorBarter) {
     rolledItems.push(rolledItem);
     accruedBarter += parseInt(rolledItem.barter);
   }
-  return rolledItems;
+  return rolledItems.sort(nameSortComparator);
 }
 
 export default rollTable;

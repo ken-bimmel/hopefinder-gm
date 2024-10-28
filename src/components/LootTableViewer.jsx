@@ -15,22 +15,25 @@ import {
   filterToGearItems,
   filterToWeaponItems,
 } from "../services/filterDrops";
+import { nameSortComparator } from "../services/sortDrops";
 
-function flatten(lootTable) {
-  return lootTable.map((entry) => {
-    return { ...entry.item, weighting: entry.weighting };
-  });
+function flattenAndSort(lootTable) {
+  return lootTable
+    .map((entry) => {
+      return { ...entry.item, weighting: entry.weighting };
+    })
+    .sort(nameSortComparator);
 }
 
 function LootRoller() {
   const [selectedRollTable, setSelectedRollTable] = useState(LOOT_AREAS[0]);
   const [tableItems, setTableItems] = useState(
-    flatten(LOOT_TABLE[selectedRollTable])
+    flattenAndSort(LOOT_TABLE[selectedRollTable])
   );
 
   const updateSelectedRollTable = function (event) {
     setSelectedRollTable(event.target.value);
-    setTableItems(flatten(LOOT_TABLE[event.target.value]));
+    setTableItems(flattenAndSort(LOOT_TABLE[event.target.value]));
   };
 
   console.log({ selectedRollTable, tableItems, LOOT_AREAS, LOOT_TABLE });
